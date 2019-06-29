@@ -81,17 +81,6 @@ F 3 "~" H 2000 -250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C_Small C6
-U 1 1 5D18333B
-P 2400 -250
-F 0 "C6" H 2492 -204 50  0000 L CNN
-F 1 "0.1u" H 2492 -295 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 2400 -250 50  0001 C CNN
-F 3 "~" H 2400 -250 50  0001 C CNN
-	1    2400 -250
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR04
 U 1 1 5D183A7D
 P 1000 -150
@@ -121,18 +110,12 @@ Wire Wire Line
 Connection ~ 1600 -350
 Wire Wire Line
 	1600 -350 2000 -350
-Connection ~ 2000 -350
-Wire Wire Line
-	2000 -350 2400 -350
-Wire Wire Line
-	2400 -150 2000 -150
 Connection ~ 1200 -150
 Wire Wire Line
 	1200 -150 1000 -150
 Connection ~ 1600 -150
 Wire Wire Line
 	1600 -150 1200 -150
-Connection ~ 2000 -150
 Wire Wire Line
 	2000 -150 1600 -150
 $Comp
@@ -244,9 +227,6 @@ Wire Wire Line
 Connection ~ 2200 2450
 Wire Wire Line
 	2100 2450 2200 2450
-Wire Wire Line
-	2000 2450 2100 2450
-Connection ~ 2100 2450
 $Comp
 L MCU_ST_STM32F0:STM32F072CBTx U1
 U 1 1 5D17A366
@@ -605,11 +585,11 @@ Text GLabel 10850 5700 2    50   Input ~ 0
 EC1S1
 Text GLabel 10850 5900 2    50   Input ~ 0
 EC1S2
-Text GLabel 1500 3350 0    50   Input ~ 0
+Text GLabel 2800 4050 2    50   Input ~ 0
 MF1A
-Text GLabel 1500 3450 0    50   Input ~ 0
+Text GLabel 2800 4150 2    50   Input ~ 0
 MF1B
-Text GLabel 1500 3550 0    50   Input ~ 0
+Text GLabel 2800 4250 2    50   Input ~ 0
 MF1C
 Text GLabel 1500 3050 0    50   Input ~ 0
 MF1D
@@ -621,29 +601,29 @@ Text GLabel 2800 3850 2    50   Input ~ 0
 MF1PUSH
 Text GLabel 2800 3950 2    50   Input ~ 0
 MF1COM
-Text GLabel 1500 3750 0    50   Input ~ 0
-MF2A
-Text GLabel 1500 3850 0    50   Input ~ 0
-MF2B
-Text GLabel 1500 3950 0    50   Input ~ 0
-MF2C
-Text GLabel 1500 4750 0    50   Input ~ 0
-MF2D
-Text GLabel 1500 4850 0    50   Input ~ 0
-MF2EA
-Text GLabel 1500 4950 0    50   Input ~ 0
-MF2EB
-Text GLabel 1500 5050 0    50   Input ~ 0
-MF2PUSH
 Text GLabel 1500 5150 0    50   Input ~ 0
+MF2A
+Text GLabel 1500 5050 0    50   Input ~ 0
+MF2B
+Text GLabel 1500 4950 0    50   Input ~ 0
+MF2C
+Text GLabel 1500 4850 0    50   Input ~ 0
+MF2D
+Text GLabel 2800 4750 2    50   Input ~ 0
+MF2EA
+Text GLabel 2800 4650 2    50   Input ~ 0
+MF2EB
+Text GLabel 2800 4550 2    50   Input ~ 0
+MF2PUSH
+Text GLabel 1500 5250 0    50   Input ~ 0
 MF2COM
-Text GLabel 1500 4150 0    50   Input ~ 0
+Text GLabel 2800 4350 2    50   Input ~ 0
 EC1EA
-Text GLabel 1500 4250 0    50   Input ~ 0
+Text GLabel 2800 4450 2    50   Input ~ 0
 EC1EB
-Text GLabel 1500 4350 0    50   Input ~ 0
+Text GLabel 1500 3750 0    50   Input ~ 0
 EC1S1
-Text GLabel 1500 4450 0    50   Input ~ 0
+Text GLabel 1500 3850 0    50   Input ~ 0
 EC1S2
 Text GLabel 5050 4550 3    50   Input ~ 0
 MF1COM
@@ -1078,4 +1058,133 @@ F 3 "" H 6150 5550 50  0001 C CNN
 	1    6150 5550
 	-1   0    0    1   
 $EndComp
+$Comp
+L keyboard_parts:SW_PUSH SW1
+U 1 1 5D399C01
+P 1750 7100
+F 0 "SW1" H 1750 7355 50  0000 C CNN
+F 1 "SW_PUSH" H 1750 7264 50  0000 C CNN
+F 2 "Button_Switch_SMD:SW_SPST_SKQG_WithStem" H 1750 7100 60  0001 C CNN
+F 3 "" H 1750 7100 60  0000 C CNN
+	1    1750 7100
+	1    0    0    -1  
+$EndComp
+Text GLabel 2150 7100 2    50   Input ~ 0
+NRST
+$Comp
+L power:GND #PWR037
+U 1 1 5D39BA71
+P 1450 7100
+F 0 "#PWR037" H 1450 6850 50  0001 C CNN
+F 1 "GND" V 1455 6972 50  0000 R CNN
+F 2 "" H 1450 7100 50  0001 C CNN
+F 3 "" H 1450 7100 50  0001 C CNN
+	1    1450 7100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2050 7100 2150 7100
+$Comp
+L power:+3.3V #PWR038
+U 1 1 5D3A132B
+P 1700 7600
+F 0 "#PWR038" H 1700 7450 50  0001 C CNN
+F 1 "+3.3V" V 1715 7728 50  0000 L CNN
+F 2 "" H 1700 7600 50  0001 C CNN
+F 3 "" H 1700 7600 50  0001 C CNN
+	1    1700 7600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R10
+U 1 1 5D3A402B
+P 1800 7800
+F 0 "R10" V 1700 7800 50  0000 C CNN
+F 1 "10k" V 1800 7800 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1800 7800 50  0001 C CNN
+F 3 "~" H 1800 7800 50  0001 C CNN
+	1    1800 7800
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR039
+U 1 1 5D3A49AD
+P 1800 7900
+F 0 "#PWR039" H 1800 7650 50  0001 C CNN
+F 1 "GND" H 1805 7727 50  0000 C CNN
+F 2 "" H 1800 7900 50  0001 C CNN
+F 3 "" H 1800 7900 50  0001 C CNN
+	1    1800 7900
+	1    0    0    -1  
+$EndComp
+Text GLabel 1800 7600 2    50   Input ~ 0
+BOOT0
+$Comp
+L Connector_Generic:Conn_01x02 J3
+U 1 1 5D3AA815
+P 1700 7400
+F 0 "J3" V 1664 7212 50  0000 R CNN
+F 1 "Conn_01x02" V 1573 7212 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1700 7400 50  0001 C CNN
+F 3 "~" H 1700 7400 50  0001 C CNN
+	1    1700 7400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1800 7600 1800 7700
+NoConn ~ 2000 2450
+$Comp
+L Device:C_Small C6
+U 1 1 5D3D64FF
+P 1200 450
+F 0 "C6" H 1292 496 50  0000 L CNN
+F 1 "10n" H 1292 405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1200 450 50  0001 C CNN
+F 3 "~" H 1200 450 50  0001 C CNN
+	1    1200 450 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C15
+U 1 1 5D3D6505
+P 1600 450
+F 0 "C15" H 1692 496 50  0000 L CNN
+F 1 "1u" H 1692 405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1600 450 50  0001 C CNN
+F 3 "~" H 1600 450 50  0001 C CNN
+	1    1600 450 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR040
+U 1 1 5D3D650B
+P 1000 550
+F 0 "#PWR040" H 1000 300 50  0001 C CNN
+F 1 "GND" H 1005 377 50  0000 C CNN
+F 2 "" H 1000 550 50  0001 C CNN
+F 3 "" H 1000 550 50  0001 C CNN
+	1    1000 550 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR036
+U 1 1 5D3D6511
+P 1000 350
+F 0 "#PWR036" H 1000 200 50  0001 C CNN
+F 1 "+3.3V" H 1015 523 50  0000 C CNN
+F 2 "" H 1000 350 50  0001 C CNN
+F 3 "" H 1000 350 50  0001 C CNN
+	1    1000 350 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 350  1200 350 
+Connection ~ 1200 350 
+Wire Wire Line
+	1200 350  1600 350 
+Connection ~ 1200 550 
+Wire Wire Line
+	1200 550  1000 550 
+Wire Wire Line
+	1600 550  1200 550 
 $EndSCHEMATC
