@@ -286,11 +286,11 @@ X SBU1 9 100 -250 100 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# crokto_Alps_RKJXx
+# joy-rescue_Alps_RKJXx-crokto
 #
-DEF crokto_Alps_RKJXx MF 0 40 Y Y 1 F N
+DEF joy-rescue_Alps_RKJXx-crokto MF 0 40 Y Y 1 F N
 F0 "MF" 0 600 50 H V C CNN
-F1 "crokto_Alps_RKJXx" 0 700 50 H V C CNN
+F1 "joy-rescue_Alps_RKJXx-crokto" 0 700 50 H V C CNN
 F2 "" 0 1550 50 H I C CNN
 F3 "" 0 1550 50 H I C CNN
 DRAW
